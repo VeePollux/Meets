@@ -1,0 +1,38 @@
+.flex{
+  display: flex;
+}
+.flex-center{
+  justify-content:   center;
+}
+.flex-center-y{
+ align-items: center;
+}
+.flex-end{
+    justify-content:  flex-end;
+}
+.flex-end-y{
+    align-items:  flex-end;
+}
+.flex-space{
+  justify-content: space-between;
+}
+
+.mbt-50{
+  margin-bottom: 50px;
+  margin-top: 50px;
+}
+.flex-wrap{
+  flex-wrap: wrap;
+}
+.card{
+    margin-bottom: 20px;
+    margin-left:  10px;
+    margin-right:  10px;
+}
+.add{
+  font-size: 3vw;
+  text-align: center;
+  height: 8vw;
+  width: 8vw;
+  border-radius: 50%;
+}

@@ -1,0 +1,55 @@
+<div class='card text-white bg-dark mb-3' style='width: calc(50% - 20px);'><div class='card-body '><div class='flex flex-space flex-wrap'><h5 class='card-title'>Francis</h5><div class=''><a href='' class='btn btn-info btn'>Editar </a><a href='' class='btn btn-danger'>Remover</a></div></div><hr><ul><li><p class='card-text'>Genero: masculino</p></li><li><p class='card-text'>Idade: 19</p></li><li><p class='card-text'>Altura:180cm</p></li><li><p class='card-text'>Tamanho do pé:40cm</p></li><li> <p class='card-text'>Salto:31cm</p></li></ul><div class='flex flex-end'><a href='' class='btn btn-success'>Treinar</a></div></div></div>
+
+
+
+      let id= 0;
+
+      document.addEventListener('DOMContentLoaded', ()=>{
+        btnAdd = document.querySelector('#btnAdd');
+        containerPrincipal = document.querySelector('#containerPrincipal');
+
+        btnAdd.addEventListener('click', ()=>{
+
+          containerPrincipal.insertAdjacentHTML('afterbegin',`<div class='card text-white bg-dark mb-3' style='width: calc(50% - 20px);'><div class='card-body '><div class='flex flex-space flex-wrap'><h5 class='card-title'>Francis</h5><div class=''><a href='' class='btn btn-info btn'>Editar </a><a id='btnRemover${id}' class='btn btn-danger'>Remover</a></div></div><hr><ul><li><p class='card-text'>Genero: masculino</p></li><li><p class='card-text'>Idade: 19</p></li><li><p class='card-text'>Altura:180cm</p></li><li><p class='card-text'>Tamanho do pé:40cm</p></li><li> <p class='card-text'>Salto:31cm</p></li></ul><div class='flex flex-end'><a href='' class='btn btn-success'>Treinar</a></div></div></div>`)
+          id++;
+        });
+
+      })
+
+
+      "<div class='card text-white bg-dark mb-3' style='width: calc(50% - 20px);'>
+        <div class='card-body '>
+          <div class='flex flex-space flex-wrap'>
+              <h5 class='card-title'>Francis</h5>
+              <div class=''>
+                <a href='' class='btn btn-info btn'>Editar </a>
+                <a href='' class='btn btn-danger'>Remover</a>
+              </div>
+          </div>
+          <hr>
+          <ul>
+            <li>
+               <p class='card-text'>Genero: masculino</p>
+            </li>
+            <li>
+                <p class='card-text'>Idade: 19</p>
+            </li>
+            <li>
+               <p class='card-text'>Altura:180cm</p>
+              </li>
+            <li>
+              <p class='card-text'>Tamanho do pé:40cm</p>
+            </li>
+            <li>
+               <p class='card-text'>Salto:31cm</p>
+              </li>
+          </ul>
+          <div class='flex flex-end'>
+              <a href='' class='btn btn-success '>Treinar</a>
+          </div>
+        </div>
+      </div>"
+
+
+      containerPrincipal.insertAdjacentHTML('afterbegin',`<div class='card text-white bg-dark mb-3' style='width: calc(50% - 20px);'><div class='card-body '><div class='flex flex-space flex-wrap'><h5 class='card-title'>Nome</h5><div class=''><a href='' class='btn btn-info btn'>Editar </a><a id='btnRemover${id}' class='btn btn-danger'>Remover</a></div></div><hr><ul><li><p class='card-text'>Genero: </p></li><li><p class='card-text'>Idade: </p></li><li><p class='card-text'>Altura:</p></li><li> <p class='card-text'>Salto:</p></li></ul><div class='flex flex-end'><a href='' class='btn btn-success'>Treinar</a></div></div></div>`)
+      id++;

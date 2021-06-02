@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-br" >
+  <head>
+    <meta charset="utf-8">
+    <title>Treinar</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+
+
+
+
+
+          let id= 0;
+
+          document.addEventListener('DOMContentLoaded', ()=>{
+
+
+          var  btnAdd = document.querySelector('#btnAdd');
+          var  containerPrincipal = document.querySelector('#containerPrincipal');
+
+            btnAdd.addEventListener('click', ()=>{
+              var formulario = document.querySelector('#formulario');
+              var  formNome = document.querySelector('#nome');
+              var  formNomeValue = formNome.value;
+              var  formIdade = document.querySelector('#idade');
+              var  formIdadeValue = formIdade.value;
+              var  formGenero = document.querySelector('#genero');
+              var  formGeneroValue = formGenero.value;
+              var  formAltura = document.querySelector('#altura')
+              var  formAlturaValue = formAltura.value;
+          ;
+              var check = false
+              if(formNomeValue.length>1){
+                formNome.classList.remove('is-invalid')
+                formNome.classList.add('is-valid')
+
+              }else{
+                console.log("invalido")
+                formNome.classList.remove('is-valid')
+                formNome.classList.add('is-invalid')
+                check = true
+              }
+              if(parseInt(formIdadeValue)){
+                formIdade.classList.remove('is-invalid')
+                formIdade.classList.add('is-valid')
+
+              }else{
+                formIdade.classList.add('is-invalid')
+                formIdade.classList.remove('is-valid')
+                check = true
+              }
+              if(formGeneroValue.length>0){
+                formGenero.classList.remove('is-invalid')
+                formGenero.classList.add('is-valid')
+
+                }
+                else{
+                  formGenero.classList.add('is-invalid')
+                  formGenero.classList.remove('is-valid')
+                  check = true
+                }
+                if(parseInt(formAlturaValue) && parseInt(formAlturaValue) >=100 && parseInt(formAlturaValue)<1000){
+                  formAltura.classList.remove('is-invalid')
+                  formAltura.classList.add('is-valid')
+
+
+                }
+                else{
+                  formAltura.classList.add('is-invalid')
+                  formAltura.classList.remove('is-valid')
+                  check = true
+                  }
+
+                if (check){
+                  return
+                }
+                else{
+                  containerPrincipal.insertAdjacentHTML('afterbegin',`<div class='card text-white bg-dark mb-3' style='width: calc(50% - 20px);'><div class='card-body '><div class='flex flex-space flex-wrap'><h5 class='card-title'>${formNomeValue}</h5><div class=''><a href='' class='btn btn-info btn'>Editar </a><a id='btnRemover${id}' class='btn btn-danger'>Remover</a></div></div><hr><ul><li><p class='card-text'>Genero: ${formGeneroValue}</p></li><li><p class='card-text'>Idade: ${formIdadeValue}</p></li><li><p class='card-text'>Altura:${formAlturaValue}cm</p></li><li> <p class='card-text'>Salto:</p><br><br><br><br></li></ul><div class='flex flex-end '><a href='' class='btn btn-success'>Treinar</a></div></div></div>`)
+                  id++;
+                  formulario.reset();
+                  formNome.classList.remove('is-valid')
+                  formIdade.classList.remove('is-valid')
+                  formGenero.classList.remove('is-valid')
+                  formAltura.classList.remove('is-valid')
+                }
+
+            });
+
+
+
+          })
+
+    </script>
+  </head>
+  <body>
+    <!--Navbar do site-->
+    <nav class="navbar navbar-dark bg-dark">
+        <span class="navbar-brand" href="#">MEETS</span>
+    </nav>
+      <!--fim da nav-->
+
+      <div id="containerPrincipal" class="container flex flex-wrap mbt-50 ">
+
+        <div class='card text-white bg-dark mb-3' style='width: calc(50% - 20px);'>
+          <div class='card-body text-center'>
+            <h5 class='card-title'>Adicionar atleta</h5>
+            <hr>
+
+            <form action='#' id='formulario'>
+              <div class="input-group mb-3 needs-validation">
+                <input type="text" class="form-control " placeholder="Nome" id='nome'>
+                <div class="invalid-feedback">
+                   NOME INVÁLIDO
+                 </div>
+              </div>
+              <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Idade" id='idade'>
+                <div class="invalid-feedback">
+                   IDADE INVÁLIDA
+                 </div>
+              </div>
+              <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Gênero"  id='genero'>
+                <div class="invalid-feedback">
+                   GENERO NÃO INFORMADO
+                 </div>
+              </div>
+              <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Altura(cm)"  id='altura'>
+                <div class="invalid-feedback">
+                   ALTURA INVÁLIDA
+                 </div>
+              </div>
+
+              <div class="flex flex-center">
+                <button id='btnAdd' class='btn btn-outline-info add'>+</button>
+              </div>
+            </div>
+
+
+          </form>
+        </div>
+
+        <div class='card text-white bg-dark mb-3' style='width: calc(50% - 20px);'>
+          <div class='card-body '>
+            <div class='flex flex-space flex-wrap'>
+                <h5 class='card-title'>Francis</h5>
+                <div class=''>
+                  <a href='' class='btn btn-info btn'>Editar </a>
+                  <a href='' class='btn btn-danger'>Remover</a>
+                </div>
+            </div>
+            <hr>
+            <ul>
+              <li>
+                 <p class='card-text'>Genero: masculino</p>
+              </li>
+              <li>
+                  <p class='card-text'>Idade: 19</p>
+              </li>
+              <li>
+                 <p class='card-text'>Altura:180cm</p>
+                </li>
+              <li>
+                <p class='card-text'>Tamanho do pé:40cm</p>
+              </li>
+              <li>
+                 <p class='card-text'>Salto:31cm</p>
+                 <br>
+                 <br>
+                 <br>
+                 <br>
+                </li>
+            </ul>
+            <div class='flex flex-end '>
+                <a href='' class='btn btn-success '>Treinar</a>
+            </div>
+          </div>
+        </div>
+
+
+
+
+
+      </div>
+
+  </body>
+</html>
